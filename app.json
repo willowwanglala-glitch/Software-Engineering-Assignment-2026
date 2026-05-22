@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/home/home",
+    "pages/school-select/school-select",
+    "pages/school-list/school-list",
+    "pages/school-detail/school-detail",
+    "pages/plan-setup/plan-setup",
+    "pages/plan-generating/plan-generating",
+    "pages/plan-result/plan-result",
+    "pages/focus-timer/focus-timer",
+    "pages/statistics/statistics",
+    "pages/ai-qa/ai-qa",
+    "pages/essay-review/essay-review",
+    "pages/progress/progress",
+    "pages/profile/profile",
+    "pages/admin-login/admin-login",
+    "pages/admin-dashboard/admin-dashboard"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "英语考研宝",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f8fafc"
+  },
+  "usingComponents": {
+    "tab-bar": "/components/tab-bar/tab-bar"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}
