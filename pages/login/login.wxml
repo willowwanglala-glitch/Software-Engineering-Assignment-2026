@@ -1,0 +1,31 @@
+<view class="login-container">
+  <view class="login-card">
+    <view class="logo-area">
+      <view class="logo-icon">考研</view>
+      <text class="app-name">英语考研宝</text>
+      <text class="slogan">AI助力，一战成硕</text>
+    </view>
+    <view class="form-area">
+      <view class="input-group">
+        <text class="input-label">用户名</text>
+        <input class="input-field" type="text" placeholder="请输入用户名" value="{{username}}" bindinput="onUsernameInput" />
+      </view>
+      <view class="input-group">
+        <text class="input-label">密码</text>
+        <input class="input-field" type="password" placeholder="请输入密码" value="{{password}}" bindinput="onPasswordInput" />
+      </view>
+      <!-- 注册时显示确认密码 -->
+      <view class="input-group" wx:if="{{isRegister}}">
+        <text class="input-label">确认密码</text>
+        <input class="input-field" type="password" placeholder="请再次输入密码" value="{{confirmPassword}}" bindinput="onConfirmPasswordInput" />
+      </view>
+      <button class="login-btn" bindtap="onSubmit">{{isRegister ? '注 册' : '登 录'}}</button>
+      <view class="switch-mode" bindtap="switchMode">
+        <text class="switch-text">{{isRegister ? '已有账号？去登录' : '没有账号？去注册'}}</text>
+      </view>
+      <button class="wechat-btn" bindtap="onWechatLogin">微信快捷登录（wx.login + 后端用户）</button>
+      <button class="ghost-btn" bindtap="onLocalExperience">快速体验（走后端登录）</button>
+      <text class="mode-hint">当前：{{modeText}} · 演示账号密码仅本地备忘</text>
+    </view>
+  </view>
+</view>

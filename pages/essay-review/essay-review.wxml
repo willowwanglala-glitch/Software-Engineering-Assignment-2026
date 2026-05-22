@@ -1,0 +1,109 @@
+<view class="page">
+  <!-- 导航栏 -->
+  <view class="nav-bar">
+    <view class="nav-back" bindtap="goBack">
+      <text class="back-icon">←</text>
+    </view>
+    <text class="nav-title">作文AI批改</text>
+    <view class="nav-placeholder"></view>
+  </view>
+
+  <!-- 题目选择 -->
+  <view class="section">
+    <text class="section-label">选择题目</text>
+    <picker mode="selector" range="{{topicList}}" value="{{topicIndex}}" bindchange="onTopicChange">
+      <view class="picker-wrap">
+        <text class="picker-text">{{topicList[topicIndex]}}</text>
+        <text class="picker-arrow">&gt;</text>
+      </view>
+    </picker>
+  </view>
+
+  <!-- 作文类型切换 -->
+  <view class="section">
+    <text class="section-label">作文类型</text>
+    <view class="type-switch">
+      <view class="type-btn {{essayType === 'big' ? 'active' : ''}}" bindtap="switchType" data-type="big">大作文</view>
+      <view class="type-btn {{essayType === 'small' ? 'active' : ''}}" bindtap="switchType" data-type="small">小作文</view>
+    </view>
+  </view>
+
+  <!-- 作文内容 -->
+  <view class="section">
+    <text class="section-label">作文内容</text>
+    <textarea class="essay-input" placeholder="请输入你的作文内容..." value="{{essayContent}}" bindinput="onEssayInput" maxlength="2000" auto-height></textarea>
+    <text class="char-count">{{essayContent.length}}/2000</text>
+  </view>
+
+  <!-- 历史批改 -->
+  <view class="section" wx:if="{{historyList.length}}">
+    <view class="history-head" bindtap="toggleHistory">
+      <text class="section-label">历史批改（{{historyList.length}}）</text>
+      <text class="picker-arrow">{{showHistory ? '∨' : '›'}}</text>
+    </view>
+    <view wx:if="{{showHistory}}">
+      <view class="history-item" wx:for="{{historyList}}" wx:key="_id" bindtap="loadHistoryItem" data-index="{{index}}">
+        <text class="history-topic">{{item.topic || '未命名'}} · {{item.reviewResult.score || '-'}}分</text>
+        <text class="history-time">{{item.timeLabel}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 提交按钮 -->
+  <view class="submit-wrap">
+    <view class="submit-btn" bindtap="submitEssay">提交批改（云端/本地统一 API）</view>
+  </view>
+
+  <!-- 批改结果 -->
+  <view class="result-section" wx:if="{{showResult}}">
+    <text class="result-title">批改结果</text>
+
+    <!-- 总体评分 -->
+    <view class="score-card">
+      <view class="score-left">
+        <text class="score-num">{{reviewResult.score}}</text>
+        <text class="score-total">/20</text>
+      </view>
+      <view class="score-right">
+        <text class="star {{starIndex < 3 ? 'filled' : ''}}" wx:for="{{[0,1,2,3,4]}}" wx:key="index">&#9733;</text>
+      </view>
+    </view>
+
+    <!-- 维度进度条 -->
+    <view class="dimensions">
+      <view class="dim-item" wx:for="{{reviewResult.dimensions}}" wx:key="name">
+        <view class="dim-header">
+          <text class="dim-name">{{item.name}}</text>
+          <text class="dim-value">{{item.value}}%</text>
+        </view>
+        <view class="dim-bar-bg">
+          <view class="dim-bar-fill" style="width: {{item.value}}%"></view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 修改建议 -->
+    <view class="suggestions-section">
+      <text class="sub-title">修改建议</text>
+      <view class="suggestion-item error" wx:for="{{reviewResult.suggestions.error}}" wx:key="index">
+        <text class="sug-text">{{item}}</text>
+      </view>
+      <view class="suggestion-item warning" wx:for="{{reviewResult.suggestions.warning}}" wx:key="index">
+        <text class="sug-text">{{item}}</text>
+      </view>
+      <view class="suggestion-item success" wx:for="{{reviewResult.suggestions.success}}" wx:key="index">
+        <text class="sug-text">{{item}}</text>
+      </view>
+    </view>
+
+    <!-- 参考范文 -->
+    <view class="reference-section">
+      <text class="sub-title">参考范文</text>
+      <view class="reference-content">
+        <text class="ref-text">{{reviewResult.reference}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="bottom-space"></view>
+</view>

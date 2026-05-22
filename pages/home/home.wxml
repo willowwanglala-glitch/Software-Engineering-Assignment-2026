@@ -1,0 +1,92 @@
+<view class="home-page">
+  <!-- 顶部标题 -->
+  <view class="header">
+    <text class="header-title">英语考研宝</text>
+  </view>
+
+  <!-- 用户卡片 -->
+  <view class="user-card">
+    <view class="user-info">
+      <view class="avatar">用</view>
+      <view class="user-detail">
+        <text class="username">{{username}}</text>
+        <text class="study-days">已坚持学习128天</text>
+      </view>
+    </view>
+    <view class="today-points">
+      <text class="points-num">240</text>
+      <text class="points-label">今日积分</text>
+    </view>
+  </view>
+
+  <!-- 快捷入口 -->
+  <view class="section">
+    <text class="section-title">快捷入口</text>
+    <view class="grid">
+      <view class="grid-item" bindtap="goSchoolSelect">
+        <view class="grid-icon" style="background: #dbeafe;">院</view>
+        <text class="grid-label">院校方向</text>
+      </view>
+      <view class="grid-item" bindtap="goPlanSetup">
+        <view class="grid-icon" style="background: #fef3c7;">AI</view>
+        <text class="grid-label">AI计划</text>
+      </view>
+      <view class="grid-item" bindtap="goFocusTimer">
+        <view class="grid-icon" style="background: #fce7f3;">番</view>
+        <text class="grid-label">番茄专注</text>
+      </view>
+      <view class="grid-item" bindtap="goStatistics">
+        <view class="grid-icon" style="background: #d1fae5;">数</view>
+        <text class="grid-label">数据统计</text>
+      </view>
+      <view class="grid-item" bindtap="goAiQa">
+        <view class="grid-icon" style="background: #ede9fe;">问</view>
+        <text class="grid-label">AI答疑</text>
+      </view>
+      <view class="grid-item" bindtap="goEssayReview">
+        <view class="grid-icon" style="background: #ffedd5;">作</view>
+        <text class="grid-label">作文批改</text>
+      </view>
+      <view class="grid-item" bindtap="goProgress">
+        <view class="grid-icon" style="background: #e0f2fe;">进</view>
+        <text class="grid-label">进度追踪</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 今日概览 -->
+  <view class="section">
+    <text class="section-title">今日概览</text>
+    <view class="overview-row">
+      <view class="overview-card">
+        <text class="overview-value">4.5h</text>
+        <text class="overview-label">专注时长</text>
+      </view>
+      <view class="overview-card">
+        <text class="overview-value">85%</text>
+        <text class="overview-label">任务完成率</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 当前任务 -->
+  <view class="section">
+    <text class="section-title">当前任务</text>
+    <view class="task-card">
+      <view class="task-header">
+        <text class="task-name">英语词汇背诵 - Day 45</text>
+        <text class="task-percent">75%</text>
+      </view>
+      <view class="progress-bar">
+        <view class="progress-fill" style="width: 75%;"></view>
+      </view>
+      <text class="task-desc">已完成 150/200 个单词</text>
+    </view>
+  </view>
+
+  <!-- 底部占位 -->
+  <view class="bottom-placeholder"></view>
+
+  <!-- Tab Bar -->
+  <tab-bar active="home"></tab-bar>
+</view>
