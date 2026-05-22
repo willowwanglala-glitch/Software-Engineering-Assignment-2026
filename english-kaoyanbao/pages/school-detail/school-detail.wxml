@@ -1,0 +1,92 @@
+<view class="page-container">
+  <!-- 顶部导航 -->
+  <view class="nav-bar">
+    <view class="nav-back" bindtap="goBack">
+      <text class="back-arrow">←</text>
+    </view>
+    <text class="nav-title">{{name}}</text>
+    <view class="nav-placeholder"></view>
+  </view>
+
+  <!-- 院校概况 -->
+  <view class="section">
+    <text class="section-title">院校概况</text>
+    <view class="info-card">
+      <view class="info-row">
+        <text class="info-label">院校名称</text>
+        <text class="info-value">{{name}}</text>
+      </view>
+      <view class="info-row">
+        <text class="info-label">所在城市</text>
+        <text class="info-value">{{city}}</text>
+      </view>
+      <view class="info-row">
+        <text class="info-label">院校类型</text>
+        <view class="tag-group">
+          <text class="tag" wx:for="{{tags}}" wx:key="*this">{{item}}</text>
+        </view>
+      </view>
+      <view class="info-row">
+        <text class="info-label">学科特色</text>
+        <text class="info-value">{{feature}}</text>
+      </view>
+      <view class="info-desc">
+        <text class="desc-text">{{description}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 参考书目 -->
+  <view class="section">
+    <text class="section-title">参考书目</text>
+    <scroll-view class="book-scroll" scroll-x>
+      <view class="book-list">
+        <view class="book-card" wx:for="{{books}}" wx:key="index">
+          <view class="book-cover">
+            <text class="book-icon">书</text>
+          </view>
+          <text class="book-name">{{item.name}}</text>
+          <text class="book-author">{{item.author}}</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 题型展示 -->
+  <view class="section">
+    <text class="section-title">题型展示</text>
+    <view class="exam-card">
+      <view class="exam-item">
+        <view class="exam-header">
+          <text class="exam-type">阅读理解</text>
+          <text class="exam-score">40分</text>
+        </view>
+        <view class="exam-bar">
+          <view class="exam-fill" style="width: 40%;"></view>
+        </view>
+      </view>
+      <view class="exam-item">
+        <view class="exam-header">
+          <text class="exam-type">翻译与写作</text>
+          <text class="exam-score">60分</text>
+        </view>
+        <view class="exam-bar">
+          <view class="exam-fill" style="width: 60%;"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 院校特色 -->
+  <view class="section">
+    <text class="section-title">院校特色</text>
+    <view class="feature-card">
+      <text class="feature-text">{{featureDetail}}</text>
+    </view>
+  </view>
+
+  <!-- 选择按钮 -->
+  <view class="btn-area">
+    <button class="select-btn" bindtap="onSelect">选择该院校</button>
+  </view>
+</view>

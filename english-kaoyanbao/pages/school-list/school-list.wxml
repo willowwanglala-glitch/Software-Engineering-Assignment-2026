@@ -1,0 +1,26 @@
+<view class="page-container">
+  <!-- 顶部导航 -->
+  <view class="nav-bar">
+    <view class="nav-back" bindtap="goBack">
+      <text class="back-arrow">←</text>
+    </view>
+    <text class="nav-title">推荐院校（15所）</text>
+    <view class="nav-placeholder"></view>
+  </view>
+
+  <!-- 院校列表 -->
+  <view class="school-list">
+    <view class="school-card" wx:for="{{schools}}" wx:key="index" bindtap="goDetail" data-index="{{index}}">
+      <view class="school-header">
+        <text class="school-name">{{item.name}}</text>
+        <view class="tag-group">
+          <text class="tag tag-type" wx:for="{{item.tags}}" wx:for-item="tag" wx:key="*this">{{tag}}</text>
+        </view>
+      </view>
+      <view class="school-info">
+        <text class="city">{{item.city}}</text>
+        <text class="feature">{{item.feature}}</text>
+      </view>
+    </view>
+  </view>
+</view>

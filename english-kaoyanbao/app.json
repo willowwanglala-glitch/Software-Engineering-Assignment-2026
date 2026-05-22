@@ -1,0 +1,63 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/home/home",
+    "pages/school-select/school-select",
+    "pages/school-list/school-list",
+    "pages/school-detail/school-detail",
+    "pages/plan-setup/plan-setup",
+    "pages/plan-generating/plan-generating",
+    "pages/plan-result/plan-result",
+    "pages/focus-timer/focus-timer",
+    "pages/statistics/statistics",
+    "pages/ai-qa/ai-qa",
+    "pages/essay-review/essay-review",
+    "pages/progress/progress",
+    "pages/profile/profile",
+    "pages/admin-login/admin-login",
+    "pages/admin-dashboard/admin-dashboard"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "英语考研宝",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#94a3b8",
+    "selectedColor": "#2563eb",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/tabbar/home.png",
+        "selectedIconPath": "images/tabbar/home-active.png"
+      },
+      {
+        "pagePath": "pages/progress/progress",
+        "text": "学习",
+        "iconPath": "images/tabbar/book.png",
+        "selectedIconPath": "images/tabbar/book-active.png"
+      },
+      {
+        "pagePath": "pages/statistics/statistics",
+        "text": "统计",
+        "iconPath": "images/tabbar/chart.png",
+        "selectedIconPath": "images/tabbar/chart-active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "images/tabbar/user.png",
+        "selectedIconPath": "images/tabbar/user-active.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "tab-bar": "/components/tab-bar/tab-bar"
+  },
+  "sitemapLocation": "sitemap.json"
+}

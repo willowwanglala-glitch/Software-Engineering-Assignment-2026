@@ -1,0 +1,55 @@
+<view class="page">
+  <!-- 导航栏 -->
+  <view class="nav-bar">
+    <text class="nav-title">学习进度追踪</text>
+  </view>
+
+  <!-- 大圆形进度条 -->
+  <view class="progress-circle-wrap">
+    <view class="progress-circle" style="background: conic-gradient(#2563eb {{progressDeg}}deg, #e2e8f0 0deg)">
+      <view class="progress-circle-inner">
+        <text class="progress-percent">{{progressPercent}}%</text>
+        <text class="progress-label">完成进度</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 筛选Tab -->
+  <view class="filter-tabs">
+    <view class="filter-tab {{filter === 'all' ? 'active' : ''}}" bindtap="setFilter" data-filter="all">全部</view>
+    <view class="filter-tab {{filter === 'doing' ? 'active' : ''}}" bindtap="setFilter" data-filter="doing">进行中</view>
+    <view class="filter-tab {{filter === 'done' ? 'active' : ''}}" bindtap="setFilter" data-filter="done">已完成</view>
+  </view>
+
+  <!-- 任务列表 -->
+  <view class="task-list">
+    <view class="task-card" wx:for="{{filteredTasks}}" wx:key="id">
+      <view class="task-status-icon {{item.status}}" bindtap="toggleStatus" data-id="{{item.id}}">
+        <text class="icon-text" wx:if="{{item.status === 'todo'}}">○</text>
+        <text class="icon-text" wx:elif="{{item.status === 'doing'}}">▶</text>
+        <text class="icon-text" wx:else>✓</text>
+      </view>
+      <view class="task-info">
+        <text class="task-name {{item.status === 'done' ? 'done-text' : ''}}">{{item.name}}</text>
+        <view class="task-meta">
+          <text class="task-type-tag">{{item.type}}</text>
+          <text class="task-deadline">{{item.deadline}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="empty-tip" wx:if="{{filteredTasks.length === 0}}">
+      <text class="empty-text">暂无任务</text>
+    </view>
+  </view>
+
+  <!-- 添加任务按钮 -->
+  <view class="add-btn-wrap">
+    <view class="add-btn" bindtap="addTask">添加新任务</view>
+  </view>
+
+  <!-- 底部占位 -->
+  <view class="bottom-placeholder"></view>
+
+  <!-- TabBar -->
+  <tab-bar active="study"></tab-bar>
+</view>

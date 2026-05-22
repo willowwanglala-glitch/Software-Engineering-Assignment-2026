@@ -1,0 +1,31 @@
+<view class="page-container">
+  <!-- 旋转加载动画 -->
+  <view class="loading-area">
+    <view class="spinner"></view>
+    <text class="loading-title">AI正在为您生成备考计划</text>
+  </view>
+
+  <!-- 步骤列表 -->
+  <view class="steps-area">
+    <view class="step-item {{currentStep >= 1 ? 'active' : ''}}">
+      <view class="step-dot"></view>
+      <text class="step-text">正在分析考研方向...</text>
+    </view>
+    <view class="step-item {{currentStep >= 2 ? 'active' : ''}}">
+      <view class="step-dot"></view>
+      <text class="step-text">正在评估备考时间...</text>
+    </view>
+    <view class="step-item {{currentStep >= 3 ? 'active' : ''}}">
+      <view class="step-dot"></view>
+      <text class="step-text">正在制定学习策略...</text>
+    </view>
+    <view class="step-item {{currentStep >= 4 ? 'active' : ''}}">
+      <view class="step-dot"></view>
+      <text class="step-text">正在拆分三阶段...</text>
+    </view>
+    <view class="step-item {{currentStep >= 5 ? 'active' : ''}}">
+      <view class="step-dot"></view>
+      <text class="step-text">计划生成中...</text>
+    </view>
+  </view>
+</view>

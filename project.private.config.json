@@ -1,0 +1,25 @@
+{
+  "description": "本地私有配置",
+  "projectname": "miniprogram-1",
+  "libVersion": "3.16.1",
+  "setting": {
+    "compileHotReLoad": true,
+    "urlCheck": false,
+    "skylineRenderEnable": false,
+    "lazyloadPlaceholderEnable": false,
+    "preloadBackgroundData": false,
+    "useApiHook": false,
+    "useApiHostProcess": false,
+    "useStaticServer": false,
+    "useLanDebug": false,
+    "ignoreDevUnusedFiles": true,
+    "bigPackageSizeSupport": false,
+    "useIsolateContext": false,
+    "coverView": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": false,
+    "showES6CompileOption": false,
+    "checkInvalidKey": false
+  },
+  "condition": {}
+}

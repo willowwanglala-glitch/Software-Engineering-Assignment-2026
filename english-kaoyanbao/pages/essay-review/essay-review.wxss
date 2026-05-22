@@ -1,0 +1,297 @@
+.page {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding-bottom: 40rpx;
+}
+
+/* 导航栏 */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60rpx 30rpx 20rpx;
+  background: #ffffff;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.nav-back {
+  width: 64rpx;
+  height: 64rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-icon {
+  font-size: 40rpx;
+  color: #1e293b;
+  font-weight: bold;
+}
+
+.nav-title {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.nav-placeholder {
+  width: 60rpx;
+}
+
+/* Section通用 */
+.section {
+  background: #ffffff;
+  margin: 20rpx 30rpx;
+  border-radius: 16rpx;
+  padding: 24rpx 30rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.06);
+}
+
+.section-label {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 16rpx;
+  display: block;
+}
+
+/* Picker */
+.picker-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16rpx 20rpx;
+  background: #f1f5f9;
+  border-radius: 12rpx;
+}
+
+.picker-text {
+  font-size: 28rpx;
+  color: #334155;
+}
+
+.picker-arrow {
+  font-size: 28rpx;
+  color: #94a3b8;
+}
+
+/* 类型切换 */
+.type-switch {
+  display: flex;
+  gap: 16rpx;
+}
+
+.type-btn {
+  flex: 1;
+  text-align: center;
+  padding: 16rpx 0;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  color: #64748b;
+  background: #f1f5f9;
+  border: 2rpx solid transparent;
+}
+
+.type-btn.active {
+  color: #2563eb;
+  background: #eff6ff;
+  border-color: #2563eb;
+  font-weight: 600;
+}
+
+/* 作文输入 */
+.essay-input {
+  width: 100%;
+  min-height: 300rpx;
+  background: #f8fafc;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  font-size: 28rpx;
+  color: #334155;
+  line-height: 1.6;
+  box-sizing: border-box;
+}
+
+.char-count {
+  font-size: 22rpx;
+  color: #94a3b8;
+  text-align: right;
+  margin-top: 8rpx;
+  display: block;
+}
+
+/* 提交按钮 */
+.submit-wrap {
+  padding: 0 30rpx;
+  margin-top: 10rpx;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  text-align: center;
+  padding: 24rpx 0;
+  border-radius: 12rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+/* 批改结果 */
+.result-section {
+  margin: 30rpx 30rpx 0;
+  background: #ffffff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.06);
+}
+
+.result-title {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 24rpx;
+  display: block;
+}
+
+/* 评分卡片 */
+.score-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #eff6ff;
+  border-radius: 12rpx;
+  padding: 24rpx 30rpx;
+  margin-bottom: 24rpx;
+}
+
+.score-left {
+  display: flex;
+  align-items: baseline;
+}
+
+.score-num {
+  font-size: 56rpx;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.score-total {
+  font-size: 28rpx;
+  color: #64748b;
+  margin-left: 4rpx;
+}
+
+.score-right {
+  display: flex;
+  gap: 4rpx;
+}
+
+.star {
+  font-size: 44rpx;
+  color: #e2e8f0;
+}
+
+.star.filled {
+  color: #f59e0b;
+}
+
+/* 维度进度条 */
+.dimensions {
+  margin-bottom: 24rpx;
+}
+
+.dim-item {
+  margin-bottom: 16rpx;
+}
+
+.dim-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8rpx;
+}
+
+.dim-name {
+  font-size: 26rpx;
+  color: #334155;
+}
+
+.dim-value {
+  font-size: 26rpx;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.dim-bar-bg {
+  height: 10rpx;
+  background: #e2e8f0;
+  border-radius: 5rpx;
+  overflow: hidden;
+}
+
+.dim-bar-fill {
+  height: 100%;
+  background: linear-gradient(to right, #2563eb, #3b82f6);
+  border-radius: 5rpx;
+}
+
+/* 修改建议 */
+.suggestions-section {
+  margin-bottom: 24rpx;
+}
+
+.sub-title {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 12rpx;
+  display: block;
+}
+
+.suggestion-item {
+  padding: 16rpx 20rpx;
+  border-radius: 8rpx;
+  margin-bottom: 10rpx;
+  border-left: 6rpx solid;
+}
+
+.suggestion-item.error {
+  background: #fef2f2;
+  border-color: #ef4444;
+}
+
+.suggestion-item.warning {
+  background: #fffbeb;
+  border-color: #f59e0b;
+}
+
+.suggestion-item.success {
+  background: #f0fdf4;
+  border-color: #22c55e;
+}
+
+.sug-text {
+  font-size: 26rpx;
+  color: #334155;
+  line-height: 1.5;
+}
+
+/* 参考范文 */
+.reference-section {
+  margin-bottom: 20rpx;
+}
+
+.reference-content {
+  background: #f8fafc;
+  border-radius: 12rpx;
+  padding: 24rpx;
+}
+
+.ref-text {
+  font-size: 26rpx;
+  color: #475569;
+  line-height: 1.8;
+}
+
+.bottom-space {
+  height: 40rpx;
+}

@@ -1,0 +1,23 @@
+<view class="page-container">
+  <!-- 顶部导航 -->
+  <view class="nav-bar">
+    <view class="nav-back" bindtap="goBack">
+      <text class="back-arrow">←</text>
+    </view>
+    <text class="nav-title">选择考研方向</text>
+    <view class="nav-placeholder"></view>
+  </view>
+
+  <!-- 选择网格 -->
+  <view class="grid">
+    <view class="grid-item {{selected === index ? 'active' : ''}}" wx:for="{{directions}}" wx:key="index" bindtap="onSelect" data-index="{{index}}">
+      <text class="item-text">{{item}}</text>
+      <view class="check-mark" wx:if="{{selected === index}}">✓</view>
+    </view>
+  </view>
+
+  <!-- 确认按钮 -->
+  <view class="btn-area">
+    <button class="confirm-btn" bindtap="onConfirm">确认选择</button>
+  </view>
+</view>

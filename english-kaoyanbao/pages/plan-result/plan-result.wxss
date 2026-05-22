@@ -1,0 +1,227 @@
+.page {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding-bottom: 120rpx;
+}
+
+/* 导航栏 */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60rpx 30rpx 20rpx;
+  background: #ffffff;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.nav-back {
+  width: 64rpx;
+  height: 64rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-icon {
+  font-size: 40rpx;
+  color: #1e293b;
+  font-weight: bold;
+}
+
+.nav-title {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.nav-placeholder {
+  width: 60rpx;
+}
+
+/* Tab切换 */
+.tab-container {
+  display: flex;
+  padding: 20rpx 30rpx;
+  background: #ffffff;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.tab-item {
+  flex: 1;
+  text-align: center;
+  padding: 16rpx 0;
+  font-size: 28rpx;
+  color: #64748b;
+  border-bottom: 4rpx solid transparent;
+}
+
+.tab-item.active {
+  color: #2563eb;
+  font-weight: 600;
+  border-bottom-color: #2563eb;
+}
+
+/* 阶段内容 */
+.stage-content {
+  padding: 30rpx;
+}
+
+/* 阶段信息卡片 */
+.stage-card {
+  background: #ffffff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 24rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.06);
+}
+
+.stage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24rpx;
+}
+
+.stage-name {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.stage-days {
+  font-size: 26rpx;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 6rpx 16rpx;
+  border-radius: 20rpx;
+}
+
+.progress-section {
+  margin-top: 10rpx;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12rpx;
+}
+
+.progress-label {
+  font-size: 26rpx;
+  color: #64748b;
+}
+
+.progress-percent {
+  font-size: 26rpx;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.progress-bar-bg {
+  height: 12rpx;
+  background: #e2e8f0;
+  border-radius: 6rpx;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(to right, #2563eb, #3b82f6);
+  border-radius: 6rpx;
+  transition: width 0.3s ease;
+}
+
+/* 通用section */
+.section {
+  background: #ffffff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 24rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.06);
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+/* 每日任务 */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.task-dot {
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background: #2563eb;
+  flex-shrink: 0;
+}
+
+.task-text {
+  font-size: 28rpx;
+  color: #334155;
+}
+
+/* 每周目标 */
+.weekly-goal {
+  background: #eff6ff;
+  border-radius: 12rpx;
+  padding: 24rpx;
+  border-left: 6rpx solid #2563eb;
+}
+
+.goal-text {
+  font-size: 28rpx;
+  color: #334155;
+  line-height: 1.6;
+}
+
+/* 推荐资料 */
+.material-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+
+.material-tag {
+  font-size: 24rpx;
+  color: #2563eb;
+  background: #eff6ff;
+  padding: 10rpx 20rpx;
+  border-radius: 20rpx;
+  border: 1px solid #bfdbfe;
+}
+
+/* 底部按钮 */
+.bottom-btn-wrap {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20rpx 30rpx;
+  padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
+  background: #ffffff;
+  box-shadow: 0 -2rpx 12rpx rgba(0, 0, 0, 0.06);
+}
+
+.start-btn {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  text-align: center;
+  padding: 24rpx 0;
+  border-radius: 12rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+}

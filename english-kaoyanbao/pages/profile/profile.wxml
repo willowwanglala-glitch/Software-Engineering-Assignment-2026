@@ -1,0 +1,77 @@
+<view class="page">
+  <!-- 导航栏 -->
+  <view class="nav-bar">
+    <text class="nav-title">个人中心</text>
+  </view>
+
+  <!-- 用户信息 -->
+  <view class="user-card">
+    <view class="avatar">
+      <text class="avatar-letter">{{usernameFirst}}</text>
+    </view>
+    <view class="user-info">
+      <text class="user-name">{{username}}</text>
+      <text class="user-school">目标院校：{{schoolName}}</text>
+    </view>
+  </view>
+
+  <!-- 三列统计 -->
+  <view class="stats-row">
+    <view class="stat-item">
+      <text class="stat-num">128</text>
+      <text class="stat-label">坚持天数</text>
+    </view>
+    <view class="stat-divider"></view>
+    <view class="stat-item">
+      <text class="stat-num">240</text>
+      <text class="stat-label">今日积分</text>
+    </view>
+    <view class="stat-divider"></view>
+    <view class="stat-item">
+      <text class="stat-num">12.5h</text>
+      <text class="stat-label">本周专注</text>
+    </view>
+  </view>
+
+  <!-- 管理后台入口 -->
+  <view class="admin-card" bindtap="goAdmin">
+    <text class="admin-title">管理后台</text>
+    <text class="admin-desc">查看和管理学习数据</text>
+    <text class="admin-arrow">></text>
+  </view>
+
+  <!-- 菜单列表 -->
+  <view class="menu-list">
+    <view class="menu-item" bindtap="onMenuTap" data-menu="favorite">
+      <text class="menu-icon-text">★</text>
+      <text class="menu-name">我的收藏</text>
+      <text class="menu-arrow">></text>
+    </view>
+    <view class="menu-item" bindtap="onMenuTap" data-menu="notification">
+      <text class="menu-icon-text">✉</text>
+      <text class="menu-name">消息通知</text>
+      <text class="menu-arrow">></text>
+    </view>
+    <view class="menu-item" bindtap="onMenuTap" data-menu="settings">
+      <text class="menu-icon-text">⚙</text>
+      <text class="menu-name">系统设置</text>
+      <text class="menu-arrow">></text>
+    </view>
+    <view class="menu-item" bindtap="onMenuTap" data-menu="help">
+      <text class="menu-icon-text">?</text>
+      <text class="menu-name">帮助与反馈</text>
+      <text class="menu-arrow">></text>
+    </view>
+  </view>
+
+  <!-- 退出登录 -->
+  <view class="logout-wrap">
+    <view class="logout-btn" bindtap="logout">退出登录</view>
+  </view>
+
+  <!-- 底部占位 -->
+  <view class="bottom-placeholder"></view>
+
+  <!-- TabBar -->
+  <tab-bar active="profile"></tab-bar>
+</view>

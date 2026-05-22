@@ -1,0 +1,63 @@
+<view class="page">
+  <!-- 导航栏 -->
+  <view class="nav-bar">
+    <text class="nav-title">番茄专注页</text>
+    <view class="add-btn" bindtap="addFiveMin">+5min</view>
+  </view>
+
+  <!-- 任务输入 -->
+  <view class="task-input-wrap">
+    <input class="task-input" placeholder="输入当前任务..." value="{{taskName}}" bindinput="onTaskInput" />
+  </view>
+
+  <!-- 圆形计时器 -->
+  <view class="timer-wrap">
+    <view class="timer-circle" style="background: conic-gradient(#2563eb {{progressDeg}}deg, #e2e8f0 0deg)">
+      <view class="timer-inner">
+        <text class="timer-time">{{displayTime}}</text>
+        <text class="timer-mode">{{currentMode.name}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 控制按钮 -->
+  <view class="control-btns">
+    <view class="btn btn-start" bindtap="toggleTimer">{{isRunning ? '暂停' : '开始'}}</view>
+    <view class="btn btn-complete" bindtap="completeTimer">完成</view>
+  </view>
+
+  <!-- 模式切换 -->
+  <view class="mode-section">
+    <text class="mode-title">专注模式</text>
+    <view class="mode-list">
+      <view class="mode-item {{activeMode === 0 ? 'active' : ''}}" bindtap="switchMode" data-index="0">
+        <text class="mode-name">单词</text>
+        <text class="mode-time">25min</text>
+      </view>
+      <view class="mode-item {{activeMode === 1 ? 'active' : ''}}" bindtap="switchMode" data-index="1">
+        <text class="mode-name">阅读</text>
+        <text class="mode-time">30min</text>
+      </view>
+      <view class="mode-item {{activeMode === 2 ? 'active' : ''}}" bindtap="switchMode" data-index="2">
+        <text class="mode-name">写作</text>
+        <text class="mode-time">40min</text>
+      </view>
+      <view class="mode-item {{activeMode === 3 ? 'active' : ''}}" bindtap="switchMode" data-index="3">
+        <text class="mode-name">翻译</text>
+        <text class="mode-time">35min</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 今日统计 -->
+  <view class="today-stats">
+    <view class="stat-card">
+      <text class="stat-num">{{todayCount}}</text>
+      <text class="stat-label">今日番茄数</text>
+    </view>
+    <view class="stat-card">
+      <text class="stat-num">{{todayMinutes}}</text>
+      <text class="stat-label">总分钟数</text>
+    </view>
+  </view>
+</view>

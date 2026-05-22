@@ -1,0 +1,74 @@
+<view class="page-container">
+  <!-- 顶部导航 -->
+  <view class="nav-bar">
+    <view class="nav-back" bindtap="goBack">
+      <text class="back-arrow">←</text>
+    </view>
+    <text class="nav-title">AI备考计划</text>
+    <view class="nav-placeholder"></view>
+  </view>
+
+  <!-- 表单卡片 -->
+  <view class="form-card">
+    <!-- 考研方向 -->
+    <view class="form-item">
+      <text class="form-label">考研方向</text>
+      <picker mode="selector" range="{{directions}}" value="{{directionIndex}}" bindchange="onDirectionChange">
+        <view class="picker-value">
+          <text class="picker-text">{{directionIndex >= 0 ? directions[directionIndex] : '请选择考研方向'}}</text>
+          <text class="picker-arrow">></text>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 目标院校 -->
+    <view class="form-item">
+      <text class="form-label">目标院校</text>
+      <picker mode="selector" range="{{schools}}" value="{{schoolIndex}}" bindchange="onSchoolChange">
+        <view class="picker-value">
+          <text class="picker-text">{{schoolIndex >= 0 ? schools[schoolIndex] : '请选择目标院校'}}</text>
+          <text class="picker-arrow">></text>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 备考天数 -->
+    <view class="form-item">
+      <text class="form-label">备考天数</text>
+      <view class="number-input-area">
+        <view class="num-btn" bindtap="decreaseDays">-</view>
+        <input class="number-input" type="number" value="{{days}}" bindinput="onDaysInput" />
+        <view class="num-btn" bindtap="increaseDays">+</view>
+        <text class="unit">天</text>
+      </view>
+    </view>
+
+    <!-- 每日学习时长 -->
+    <view class="form-item">
+      <text class="form-label">每日学习时长</text>
+      <view class="time-options">
+        <view class="time-btn {{studyHours === 2 ? 'active' : ''}}" bindtap="selectHours" data-hours="2">2h</view>
+        <view class="time-btn {{studyHours === 4 ? 'active' : ''}}" bindtap="selectHours" data-hours="4">4h</view>
+        <view class="time-btn {{studyHours === 6 ? 'active' : ''}}" bindtap="selectHours" data-hours="6">6h</view>
+        <view class="time-btn {{studyHours === 8 ? 'active' : ''}}" bindtap="selectHours" data-hours="8">8h+</view>
+      </view>
+    </view>
+
+    <!-- 薄弱环节 -->
+    <view class="form-item">
+      <text class="form-label">薄弱环节（多选）</text>
+      <view class="weakness-tags">
+        <view class="weakness-tag {{weakness1 ? 'active' : ''}}" bindtap="toggleWeakness" data-index="1">词汇</view>
+        <view class="weakness-tag {{weakness2 ? 'active' : ''}}" bindtap="toggleWeakness" data-index="2">阅读</view>
+        <view class="weakness-tag {{weakness3 ? 'active' : ''}}" bindtap="toggleWeakness" data-index="3">写作</view>
+        <view class="weakness-tag {{weakness4 ? 'active' : ''}}" bindtap="toggleWeakness" data-index="4">翻译</view>
+        <view class="weakness-tag {{weakness5 ? 'active' : ''}}" bindtap="toggleWeakness" data-index="5">完形</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 生成按钮 -->
+  <view class="btn-area">
+    <button class="generate-btn" bindtap="onGenerate">AI生成备考计划</button>
+  </view>
+</view>

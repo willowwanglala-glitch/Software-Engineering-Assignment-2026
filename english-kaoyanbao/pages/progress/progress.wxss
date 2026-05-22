@@ -1,0 +1,218 @@
+.page {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding-bottom: 120rpx;
+}
+
+/* 导航栏 */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60rpx 30rpx 20rpx;
+  background: #ffffff;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.nav-title {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+/* 大圆形进度条 */
+.progress-circle-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 40rpx 0;
+}
+
+.progress-circle {
+  width: 280rpx;
+  height: 280rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-circle-inner {
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4rpx 24rpx rgba(0, 0, 0, 0.08);
+}
+
+.progress-percent {
+  font-size: 56rpx;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.progress-label {
+  font-size: 24rpx;
+  color: #64748b;
+  margin-top: 4rpx;
+}
+
+/* 筛选Tab */
+.filter-tabs {
+  display: flex;
+  padding: 0 30rpx;
+  gap: 16rpx;
+  margin-bottom: 24rpx;
+}
+
+.filter-tab {
+  padding: 12rpx 28rpx;
+  border-radius: 24rpx;
+  font-size: 26rpx;
+  color: #64748b;
+  background: #ffffff;
+  border: 2rpx solid #e2e8f0;
+}
+
+.filter-tab.active {
+  color: #ffffff;
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+/* 任务列表 */
+.task-list {
+  padding: 0 30rpx;
+}
+
+.task-card {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  background: #ffffff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 16rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.06);
+}
+
+/* 状态图标 */
+.task-status-icon {
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 3rpx solid #e2e8f0;
+}
+
+.task-status-icon.todo {
+  border-color: #94a3b8;
+}
+
+.task-status-icon.doing {
+  border-color: #f59e0b;
+  background: #fffbeb;
+}
+
+.task-status-icon.done {
+  border-color: #22c55e;
+  background: #f0fdf4;
+}
+
+.icon-text {
+  font-size: 28rpx;
+  font-weight: 700;
+}
+
+.task-status-icon.todo .icon-text {
+  color: #94a3b8;
+}
+
+.task-status-icon.doing .icon-text {
+  color: #f59e0b;
+}
+
+.task-status-icon.done .icon-text {
+  color: #22c55e;
+}
+
+/* 任务信息 */
+.task-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.task-name {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.task-name.done-text {
+  color: #94a3b8;
+  text-decoration: line-through;
+}
+
+.task-meta {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.task-type-tag {
+  font-size: 22rpx;
+  color: #2563eb;
+  background: #eff6ff;
+  padding: 4rpx 12rpx;
+  border-radius: 8rpx;
+}
+
+.task-deadline {
+  font-size: 22rpx;
+  color: #94a3b8;
+}
+
+/* 空状态 */
+.empty-tip {
+  padding: 60rpx 0;
+  text-align: center;
+}
+
+.empty-text {
+  font-size: 26rpx;
+  color: #94a3b8;
+}
+
+/* 添加按钮 */
+.add-btn-wrap {
+  position: fixed;
+  bottom: 100rpx;
+  left: 0;
+  right: 0;
+  padding: 0 30rpx;
+  z-index: 100;
+}
+
+.add-btn {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  text-align: center;
+  padding: 24rpx 0;
+  border-radius: 12rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+  box-shadow: 0 4rpx 16rpx rgba(37, 99, 235, 0.4);
+}
+
+/* 底部占位 */
+.bottom-placeholder {
+  height: 160rpx;
+}

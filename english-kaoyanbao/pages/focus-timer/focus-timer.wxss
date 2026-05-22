@@ -1,0 +1,191 @@
+.page {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding-bottom: 40rpx;
+}
+
+/* 导航栏 */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60rpx 30rpx 20rpx;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+}
+
+.nav-title {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.add-btn {
+  font-size: 26rpx;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 8rpx 20rpx;
+  border-radius: 20rpx;
+}
+
+/* 任务输入 */
+.task-input-wrap {
+  padding: 24rpx 30rpx;
+  background: #ffffff;
+}
+
+.task-input {
+  background: #f1f5f9;
+  border-radius: 12rpx;
+  padding: 20rpx 24rpx;
+  font-size: 28rpx;
+  color: #334155;
+}
+
+/* 圆形计时器 */
+.timer-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 40rpx 0;
+}
+
+.timer-circle {
+  width: 400rpx;
+  height: 400rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.timer-inner {
+  width: 340rpx;
+  height: 340rpx;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4rpx 24rpx rgba(0, 0, 0, 0.08);
+}
+
+.timer-time {
+  font-size: 64rpx;
+  font-weight: 700;
+  color: #1e293b;
+  font-variant-numeric: tabular-nums;
+}
+
+.timer-mode {
+  font-size: 26rpx;
+  color: #64748b;
+  margin-top: 8rpx;
+}
+
+/* 控制按钮 */
+.control-btns {
+  display: flex;
+  justify-content: center;
+  gap: 30rpx;
+  padding: 20rpx 0 40rpx;
+}
+
+.btn {
+  padding: 20rpx 60rpx;
+  border-radius: 12rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+  text-align: center;
+}
+
+.btn-start {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.btn-complete {
+  background: #f1f5f9;
+  color: #334155;
+}
+
+/* 模式切换 */
+.mode-section {
+  padding: 0 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.mode-title {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+.mode-list {
+  display: flex;
+  gap: 16rpx;
+}
+
+.mode-item {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 12rpx;
+  padding: 20rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2rpx solid #e2e8f0;
+}
+
+.mode-item.active {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.mode-name {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.mode-item.active .mode-name {
+  color: #2563eb;
+}
+
+.mode-time {
+  font-size: 22rpx;
+  color: #64748b;
+  margin-top: 6rpx;
+}
+
+/* 今日统计 */
+.today-stats {
+  display: flex;
+  gap: 20rpx;
+  padding: 0 30rpx;
+}
+
+.stat-card {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.06);
+}
+
+.stat-num {
+  font-size: 48rpx;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.stat-label {
+  font-size: 24rpx;
+  color: #64748b;
+  margin-top: 8rpx;
+}

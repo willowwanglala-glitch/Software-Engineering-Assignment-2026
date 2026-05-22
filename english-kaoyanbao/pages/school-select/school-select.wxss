@@ -1,0 +1,113 @@
+.page-container {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60rpx 32rpx 24rpx;
+  background: #ffffff;
+}
+
+.nav-back {
+  width: 64rpx;
+  height: 64rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-arrow {
+  font-size: 40rpx;
+  color: #1e293b;
+  font-weight: bold;
+}
+
+.nav-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.nav-placeholder {
+  width: 64rpx;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 24rpx 32rpx;
+  gap: 24rpx;
+}
+
+.grid-item {
+  width: calc(50% - 12rpx);
+  background: #ffffff;
+  border-radius: 16rpx;
+  padding: 40rpx 24rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 4rpx solid transparent;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.grid-item.active {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.item-text {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #1e293b;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.grid-item.active .item-text {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.check-mark {
+  position: absolute;
+  top: 12rpx;
+  right: 12rpx;
+  width: 40rpx;
+  height: 40rpx;
+  background: #2563eb;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-area {
+  padding: 40rpx 32rpx;
+}
+
+.confirm-btn {
+  width: 100%;
+  height: 88rpx;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  font-size: 30rpx;
+  font-weight: 600;
+  border-radius: 12rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  line-height: 88rpx;
+}
+
+.confirm-btn::after {
+  border: none;
+}
