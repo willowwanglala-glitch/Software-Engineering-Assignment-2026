@@ -1,0 +1,81 @@
+.page {
+  padding: 32rpx;
+  padding-bottom: 120rpx;
+}
+.header {
+  background: linear-gradient(135deg, #4a90d9, #6eb5ff);
+  border-radius: 20rpx;
+  padding: 40rpx;
+  color: #fff;
+  margin-bottom: 32rpx;
+}
+.hello {
+  display: block;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.profile {
+  display: block;
+  margin-top: 12rpx;
+  font-size: 26rpx;
+  opacity: 0.9;
+}
+.profile.warn {
+  text-decoration: underline;
+}
+.stats-row {
+  display: flex;
+  gap: 24rpx;
+  margin-bottom: 32rpx;
+}
+.stat-card {
+  flex: 1;
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 32rpx;
+  text-align: center;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+}
+.num {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #4a90d9;
+}
+.unit {
+  font-size: 24rpx;
+  color: #999;
+  margin-left: 8rpx;
+}
+.desc {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+.menu-item {
+  display: block;
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 32rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+}
+.menu-title {
+  display: block;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+.menu-tip {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+.backend-tag {
+  display: block;
+  text-align: center;
+  margin-top: 24rpx;
+  font-size: 22rpx;
+  color: #bbb;
+}

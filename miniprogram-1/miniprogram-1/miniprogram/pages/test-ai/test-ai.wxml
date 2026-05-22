@@ -1,0 +1,46 @@
+<view class="page">
+  <view class="profile-bar {{profileReady ? '' : 'warn'}}">
+    <text class="profile-label">当前备考画像</text>
+    <text class="profile-value">{{profileText}}</text>
+    <text wx:if="{{!profileReady}}" class="profile-link" bindtap="onGoOnboarding">去设置 →</text>
+  </view>
+
+  <view class="quick-section">
+    <text class="section-title">快捷提问</text>
+    <view class="quick-row">
+      <view
+        wx:for="{{quickList}}"
+        wx:key="label"
+        class="quick-chip"
+        data-text="{{item.text}}"
+        bindtap="onQuickAsk"
+      >
+        {{item.label}}
+      </view>
+    </view>
+  </view>
+
+  <view class="input-card">
+    <textarea
+      class="input-area"
+      value="{{question}}"
+      bindinput="onInput"
+      placeholder="输入考研英语问题，将结合你的方向与院校回答…"
+      maxlength="500"
+      auto-height
+    />
+    <view class="btn-row">
+      <button class="btn-send" bindtap="testAI" disabled="{{loading}}" loading="{{loading}}">
+        {{loading ? '思考中…' : '发送提问'}}
+      </button>
+      <button class="btn-clear" bindtap="onClearChat" disabled="{{loading}}">新对话</button>
+    </view>
+  </view>
+
+  <view class="answer-card" wx:if="{{answer}}">
+    <text class="answer-title">AI 回答</text>
+    <text class="answer-body" user-select>{{answer}}</text>
+  </view>
+
+  <text class="footer-tip">回答将保存到学习记录 · 仅讨论考研英语备考</text>
+</view>
