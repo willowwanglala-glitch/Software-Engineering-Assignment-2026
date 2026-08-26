@@ -1,0 +1,23 @@
+.page { min-height: 100vh; background: #f8fafc; padding-bottom: 40rpx; }
+.nav-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 60rpx 30rpx 20rpx; background: #fff; border-bottom: 1px solid #f1f5f9;
+}
+.nav-back { width: 64rpx; height: 64rpx; display: flex; align-items: center; justify-content: center; }
+.back-icon { font-size: 40rpx; color: #1e293b; font-weight: bold; }
+.nav-title { font-size: 34rpx; font-weight: 700; color: #1e293b; }
+.nav-placeholder { width: 64rpx; }
+.content-card {
+  margin: 20rpx 30rpx; background: #fff; border-radius: 16rpx; padding: 30rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0,0,0,0.06);
+}
+.category { font-size: 24rpx; color: #3b82f6; background: #dbeafe; padding: 6rpx 16rpx; border-radius: 8rpx; }
+.question { display: block; font-size: 34rpx; font-weight: 700; color: #1e293b; margin: 20rpx 0; line-height: 1.4; }
+.tags { margin-bottom: 20rpx; }
+.tag { display: inline-block; font-size: 22rpx; color: #64748b; background: #f1f5f9; padding: 4rpx 12rpx; border-radius: 6rpx; margin-right: 12rpx; }
+.answer { display: block; font-size: 28rpx; color: #475569; line-height: 1.8; }
+.btn-wrap { padding: 20rpx 30rpx; }
+.primary-btn {
+  background: #3b82f6; color: #fff; text-align: center; padding: 24rpx;
+  border-radius: 16rpx; font-size: 30rpx; font-weight: 600;
+}

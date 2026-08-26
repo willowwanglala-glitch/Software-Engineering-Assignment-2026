@@ -1,0 +1,33 @@
+# Coze / 云函数敏感配置
+miniprogram/utils/coze.config.local.js
+miniprogram/config/contact.js
+miniprogram/config/cloud.js
+miniprogram/config/app.config.local.js
+miniprogram/config/admin.config.local.js
+cloudfunctions/cozeChat/config.js
+cloudfunctions/backendApi/admin.config.local.js
+
+# 本地 / 历史包不要进仓库
+project.private.config.json
+english-kaoyanbao (2)/
+*.zip
+.DS_Store
+Thumbs.db
+
+# 构建产物（保留 cloud-import 供无 Node 环境时手动导入）
+data/export/
+!data/export/cloud-import/
+!data/export/cloud-import/**
+
+# 脚本生成的草稿
+data/source/*.draft.json
+
+# 文档：仓库只保留一份终极技术说明；其余 md 本地留存（含 iCAN、部署细则等）
+docs/*.md
+!docs/项目技术说明-当前版.md
+data/README.md
+scripts/README.md
+scripts/templates/export-readme.md
+
+# 招生对比临时产物（可选本地保留）
+data/import-kimi/compare-dump.txt

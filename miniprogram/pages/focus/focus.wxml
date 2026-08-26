@@ -1,0 +1,13 @@
+<view class="page">
+  <view class="timer {{running ? 'running' : ''}}">
+    <text class="time">{{display}}</text>
+    <text class="label">{{running ? '专注中…' : '准备开始'}}</text>
+  </view>
+  <view class="actions">
+    <button wx:if="{{!running && !paused}}" class="btn-start" bindtap="onStart">开始 25 分钟</button>
+    <button wx:if="{{running}}" class="btn-pause" bindtap="onPause">暂停</button>
+    <button wx:if="{{paused}}" class="btn-start" bindtap="onResume">继续</button>
+    <button wx:if="{{running || paused}}" class="btn-stop" bindtap="onStop">结束并保存</button>
+  </view>
+  <text class="hint">Alpha 版：固定 25 分钟番茄钟，结束后写入学习记录</text>
+</view>

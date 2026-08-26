@@ -1,0 +1,22 @@
+<view class="privacy-mask" wx:if="{{show}}">
+  <view class="privacy-dialog">
+    <text class="privacy-title">用户隐私保护提示</text>
+    <text class="privacy-content">
+      在使用「英语考研宝」前，请阅读并同意{{privacyContractName}}。我们将依法处理昵称、学习记录，以及您主动触发的剪贴板写入（如复制范文）等信息，用于提供备考服务；AI 功能由第三方生成内容，仅供参考。
+    </text>
+    <view class="privacy-links">
+      <text class="link" bindtap="openPrivacy">查看微信隐私保护指引</text>
+    </view>
+    <view class="privacy-actions">
+      <button class="btn-disagree" bindtap="handleDisagree">不同意</button>
+      <button
+        class="btn-agree"
+        id="agree-privacy-btn"
+        open-type="agreePrivacyAuthorization"
+        bindagreeprivacyauthorization="handleAgree"
+      >
+        同意并继续
+      </button>
+    </view>
+  </view>
+</view>

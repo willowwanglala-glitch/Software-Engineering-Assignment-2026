@@ -1,0 +1,37 @@
+<view class="legal-page">
+  <view class="legal-nav">
+    <text class="back" bindtap="goBack">← 返回</text>
+    <text class="title">用户服务协议</text>
+  </view>
+  <scroll-view class="legal-body" scroll-y>
+    <text class="meta">更新日期：{{updatedAt}} · 运营者：{{teamName}}</text>
+
+    <text class="p">欢迎使用「英语考研宝」。本协议由您与 {{teamName}} 订立。使用本服务前请仔细阅读；点击同意或实际使用即视为接受本协议。</text>
+
+    <text class="h">一、服务说明</text>
+    <text class="p">本小程序为考研英语学习辅助工具，提供院校信息浏览、备考计划、专注计时、学习统计、AI 智能答疑、作文批改等功能。服务内容仅供参考，不构成任何院校录取、考试通过或成绩提升承诺。</text>
+
+    <text class="h">二、账号与使用规范</text>
+    <text class="p">您应使用真实、合法的身份信息，妥善保管账号。不得利用本服务从事违法违规活动，包括但不限于作弊、代考、传播违法信息、干扰系统运行等。我们有权对违规行为采取限制或终止服务等措施。</text>
+
+    <text class="h">三、AI 生成内容声明（重要）</text>
+    <text class="p">1. 本服务包含人工智能生成内容（AIGC），包括答疑回复、备考计划建议、作文批改意见等。\n2. AI 内容可能存在不准确、不完整或过时情况，您应结合教材、真题及官方信息独立判断。\n3. AI 生成内容须显著标识为机器生成，仅供学习参考，不得作为商业宣传或官方结论。\n4. 禁止利用 AI 功能生成违法、侵权、虚假或误导性内容。</text>
+
+    <text class="h">四、用户内容与知识产权</text>
+    <text class="p">您上传的作文等内容的知识产权归您或合法权利人所有。您授予我们在提供服务所必需范围内的存储、处理与展示许可。小程序界面、代码等知识产权归运营者所有。</text>
+
+    <text class="h">五、隐私保护</text>
+    <text class="p">我们依照《隐私政策》处理您的个人信息。请同时阅读隐私政策全文。</text>
+
+    <text class="h">六、免责与责任限制</text>
+    <text class="p">因网络、第三方 AI 服务中断、不可抗力等导致的服务不可用或数据损失，我们将在合理范围内协助恢复，但对间接损失不承担责任。法律另有规定的除外。</text>
+
+    <text class="h">七、协议变更与终止</text>
+    <text class="p">我们可能更新本协议，并通过小程序提示。您可随时停止使用；我们亦可在您严重违约时终止服务。</text>
+
+    <text class="h">八、联系我们</text>
+    <text class="p">运营团队：{{teamName}}\n联系邮箱：{{contactEmail}}</text>
+
+    <text class="link" bindtap="openPrivacy">查看《隐私政策》</text>
+  </scroll-view>
+</view>

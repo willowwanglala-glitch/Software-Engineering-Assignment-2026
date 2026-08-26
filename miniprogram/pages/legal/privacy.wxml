@@ -1,0 +1,37 @@
+<view class="legal-page">
+  <view class="legal-nav">
+    <text class="back" bindtap="goBack">← 返回</text>
+    <text class="title">隐私政策</text>
+  </view>
+  <scroll-view class="legal-body" scroll-y>
+    <text class="meta">更新日期：{{updatedAt}} · 运营者：{{teamName}} · 产品：英语考研宝</text>
+
+    <text class="p">我们重视您的个人信息与隐私保护。本政策适用于您通过微信小程序「英语考研宝」使用备考规划、专注计时、学习统计、AI 答疑、作文批改等功能时，我们对信息的收集、使用、存储与保护。</text>
+
+    <text class="h">一、我们收集的信息及用途</text>
+    <text class="p">1. 账号信息：微信登录标识（openid）、您主动填写的昵称、您授权选择的头像或从相册主动选择的照片，用于创建学习档案与展示个人中心。\n2. 学习信息：考研方向、目标院校、番茄专注记录、备考计划、任务进度、作文内容与批改结果，用于提供学习与统计服务。\n3. AI 交互信息：您输入的问题、作文文本及 AI 生成回复，用于答疑、批改与记录查询。\n4. 设备与日志：机型、系统版本、操作日志（脱敏），用于保障服务稳定与安全。\n5. 反馈信息：您通过「帮助与反馈」提交的内容与联系方式（选填），用于处理投诉与售后。</text>
+
+    <text class="h">二、我们如何使用信息</text>
+    <text class="p">用于身份识别、个性化备考建议、数据统计、产品改进、安全风控及履行法律法规要求。我们不会出售您的个人信息。</text>
+
+    <text class="h">三、第三方服务（含 AI）</text>
+    <text class="p">本小程序 AI 能力由第三方服务（如字节跳动 Coze 平台）提供。您输入的内容将经我们的服务器或云函数转发至第三方以生成结果。AI 输出仅供参考，不构成招生或考试承诺。请勿输入身份证号、银行卡、密码等敏感信息。</text>
+
+    <text class="h">四、信息存储与期限</text>
+    <text class="p">数据主要存储于微信云开发环境（腾讯云）或依法合规的服务器。您退出登录后可申请删除；法律法规另有规定的除外。我们会在实现目的所必需期限内保留信息。</text>
+
+    <text class="h">五、您的权利</text>
+    <text class="p">您可查询、更正昵称与头像，退出登录，并通过「帮助与反馈」申请删除相关数据或注销服务。我们将在合理期限内处理。</text>
+
+    <text class="h">六、未成年人保护</text>
+    <text class="p">若您为未满 18 周岁的未成年人，请在监护人阅读本政策并同意后使用本服务。</text>
+
+    <text class="h">七、政策更新</text>
+    <text class="p">我们可能适时修订本政策，重大变更将通过小程序内提示。继续使用即表示您接受更新后的政策。</text>
+
+    <text class="h">八、联系我们</text>
+    <text class="p">运营团队：{{teamName}}\n联系邮箱：{{contactEmail}}\n您亦可通过小程序内「帮助与反馈」联系我们。</text>
+
+    <text class="link" bindtap="openAgreement">查看《用户服务协议》</text>
+  </scroll-view>
+</view>

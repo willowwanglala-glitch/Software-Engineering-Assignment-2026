@@ -1,0 +1,27 @@
+<view class="page">
+  <!-- 蓝色渐变全屏背景 -->
+  <view class="bg"></view>
+
+  <!-- 左上角返回按钮 -->
+  <view class="nav-back" bindtap="goBack">
+    <text class="back-arrow">←</text>
+  </view>
+
+  <!-- 居中白色卡片 -->
+  <view class="login-card">
+    <text class="title">管理后台登录</text>
+
+    <!-- 用户名输入框 -->
+    <view class="input-group">
+      <input class="input-field" type="text" placeholder="请输入管理员账号" value="{{username}}" bindinput="onUsernameInput" />
+    </view>
+
+    <!-- 密码输入框 -->
+    <view class="input-group">
+      <input class="input-field" password placeholder="请输入密码" value="{{password}}" bindinput="onPasswordInput" />
+    </view>
+
+    <!-- 登录按钮 -->
+    <view class="login-btn" bindtap="onLogin">登录</view>
+  </view>
+</view>

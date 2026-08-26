@@ -1,0 +1,20 @@
+<view class="page" wx:if="{{faq}}">
+  <view class="nav-bar">
+    <view class="nav-back" bindtap="goBack"><text class="back-icon">←</text></view>
+    <text class="nav-title">FAQ 详情</text>
+    <view class="nav-placeholder"></view>
+  </view>
+
+  <view class="content-card">
+    <text class="category">{{faq.category}}</text>
+    <text class="question">{{faq.question}}</text>
+    <view class="tags" wx:if="{{faq.tags && faq.tags.length}}">
+      <text class="tag" wx:for="{{faq.tags}}" wx:key="*this">{{item}}</text>
+    </view>
+    <text class="answer">{{faq.answer}}</text>
+  </view>
+
+  <view class="btn-wrap">
+    <view class="primary-btn" bindtap="askAi">用 AI 深入追问</view>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+[
+  { "directionId": "en_lit", "directionName": "英语语言文学", "icon": "📖" },
+  { "directionId": "en_ling", "directionName": "外国语言学及应用语言学", "icon": "🔤" },
+  { "directionId": "trans", "directionName": "翻译学", "icon": "🌐" },
+  { "directionId": "teaching", "directionName": "学科教学(英语)", "icon": "🎓" },
+  { "directionId": "comparative", "directionName": "比较文学与世界文学", "icon": "📚" },
+  { "directionId": "translation", "directionName": "英语笔译", "icon": "✍️" }
+]

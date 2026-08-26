@@ -1,0 +1,22 @@
+{
+    "version":  "1.2.2",
+    "updatedAt":  "2026-08-09",
+    "description":  "英语考研宝种子数据 — 单一数据源，由 scripts/build.ps1 生成 catalog.js / seedData.js",
+    "sources":  {
+                    "universities":  "2026年各校硕士研究生招生专业目录公开信息整理（英语相关学硕拟招）；部分院校据Kimi整理的25校6方向汇总表补充；未核到分专业人数的院校暂保留近年估算；报录比多数待院校公布",
+                    "faqs":  "考研英语常见备考问题原创整理（含复试/择校/方法类扩展）",
+                    "essaySamples":  "依据历年考研英语真题题型原创参考范文（非转载出版机构答案）；大作文字数对齐考场要求"
+                },
+    "collections":  {
+                        "universities":  25,
+                        "faqs":  35,
+                        "essaySamples":  16
+                    },
+    "enrollmentUpdate":  {
+                             "targetCycle":  "供备考2027年入学的考生参考的2026考研招生数据",
+                             "verifiedPlannedCount":  18,
+                             "pendingPlannedCount":  7,
+                             "ratioPolicy":  "无可靠官方报录比时显示「待核验」，不伪造比例",
+                             "kimiMerge":  "2026-08-09：合并Kimi《2025/2026考研英语类专业招生信息汇总》中可核验更新（上外/厦大/广外/南大等）；华师大、复旦等仅有更清晰的2025口径则改年不虚标2026"
+                         }
+}

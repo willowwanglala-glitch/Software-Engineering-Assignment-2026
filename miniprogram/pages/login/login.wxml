@@ -1,0 +1,50 @@
+<view class="login-container">
+  <view class="login-card">
+    <view class="logo-area">
+      <view class="logo-icon">考研</view>
+      <text class="app-name">英语考研宝</text>
+      <text class="slogan">AI助力，一战成硕</text>
+    </view>
+
+    <view class="agree-row" bindtap="toggleAgree">
+      <view class="checkbox {{agreed ? 'checked' : ''}}">{{agreed ? '✓' : ''}}</view>
+      <text class="agree-text">我已阅读并同意</text>
+      <text class="agree-link" catchtap="openAgreement">《用户协议》</text>
+      <text class="agree-text">和</text>
+      <text class="agree-link" catchtap="openPrivacy">《隐私政策》</text>
+    </view>
+
+    <view class="form-area">
+      <button class="wechat-btn" bindtap="onWechatLogin">微信授权登录</button>
+      <text class="login-tip">登录即创建/同步您的学习档案（需配置云开发后多机同步）</text>
+
+      <view class="demo-section" wx:if="{{showDemo}}">
+        <view class="demo-toggle" bindtap="toggleDemoPanel">
+          <text>{{showDemoPanel ? '收起' : '展开'}}演示入口（答辩/内测）</text>
+        </view>
+        <block wx:if="{{showDemoPanel}}">
+          <view class="input-group">
+            <text class="input-label">演示用户名</text>
+            <input class="input-field" type="text" placeholder="可选" value="{{username}}" bindinput="onUsernameInput" />
+          </view>
+          <view class="input-group">
+            <text class="input-label">演示密码</text>
+            <input class="input-field" type="password" placeholder="仅本地备忘" value="{{password}}" bindinput="onPasswordInput" />
+          </view>
+          <view class="input-group" wx:if="{{isRegister}}">
+            <text class="input-label">确认密码</text>
+            <input class="input-field" type="password" value="{{confirmPassword}}" bindinput="onConfirmPasswordInput" />
+          </view>
+          <button class="login-btn" bindtap="onSubmit">{{isRegister ? '注册并体验' : '演示账号登录'}}</button>
+          <view class="switch-mode" bindtap="switchMode">
+            <text class="switch-text">{{isRegister ? '已有账号？去登录' : '没有账号？去注册'}}</text>
+          </view>
+          <button class="ghost-btn" bindtap="onLocalExperience">快速体验（免账号）</button>
+        </block>
+      </view>
+
+      <text class="mode-hint">当前：{{modeText}}</text>
+    </view>
+  </view>
+  <privacy-popup />
+</view>

@@ -1,0 +1,18 @@
+<view class="tab-bar">
+  <view class="tab-item {{active === 'home' ? 'active' : ''}}" bindtap="switchTab" data-url="/pages/home/home">
+    <text class="tab-icon">🏠</text>
+    <text class="tab-label">首页</text>
+  </view>
+  <view class="tab-item {{active === 'study' ? 'active' : ''}}" bindtap="switchTab" data-url="/pages/progress/progress">
+    <text class="tab-icon">📖</text>
+    <text class="tab-label">学习</text>
+  </view>
+  <view class="tab-item {{active === 'statistics' ? 'active' : ''}}" bindtap="switchTab" data-url="/pages/statistics/statistics">
+    <text class="tab-icon">📊</text>
+    <text class="tab-label">统计</text>
+  </view>
+  <view class="tab-item {{active === 'profile' ? 'active' : ''}}" bindtap="switchTab" data-url="/pages/profile/profile">
+    <text class="tab-icon">👤</text>
+    <text class="tab-label">我的</text>
+  </view>
+</view>

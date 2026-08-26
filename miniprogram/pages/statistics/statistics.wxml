@@ -1,0 +1,102 @@
+<view class="page">
+  <!-- 导航栏 -->
+  <view class="nav-bar">
+    <text class="nav-title">数据统计</text>
+  </view>
+
+  <!-- Banner -->
+  <view class="banner">
+    <text class="banner-text">今日学习时长</text>
+    <text class="banner-sub">考研小数据</text>
+  </view>
+
+  <!-- 2x2统计网格 -->
+  <view class="stats-grid">
+    <view class="stat-item">
+      <view class="circle-progress" style="background: conic-gradient(#2563eb 86.4deg, #e2e8f0 0deg)">
+        <view class="circle-inner">
+          <text class="circle-num">24</text>
+          <text class="circle-unit">%</text>
+        </view>
+      </view>
+      <text class="stat-label">今日时长</text>
+    </view>
+    <view class="stat-item">
+      <view class="circle-progress" style="background: conic-gradient(#2563eb 104.4deg, #e2e8f0 0deg)">
+        <view class="circle-inner">
+          <text class="circle-num">29</text>
+          <text class="circle-unit">%</text>
+        </view>
+      </view>
+      <text class="stat-label">完成率</text>
+    </view>
+    <view class="stat-item">
+      <view class="stat-simple">
+        <text class="simple-num">7</text>
+        <text class="simple-unit">天</text>
+      </view>
+      <text class="stat-label">连续打卡</text>
+    </view>
+    <view class="stat-item">
+      <view class="stat-simple">
+        <text class="simple-num">168</text>
+        <text class="simple-unit">h</text>
+      </view>
+      <text class="stat-label">累计学习</text>
+    </view>
+  </view>
+
+  <!-- 打卡日历 -->
+  <view class="section">
+    <text class="section-title">学习打卡日历</text>
+    <view class="calendar-header">
+      <text class="cal-day" wx:for="{{weekDays}}" wx:key="index">{{item}}</text>
+    </view>
+    <view class="calendar-body">
+      <view class="cal-cell {{item.checked ? 'checked' : ''}}" wx:for="{{calendarDays}}" wx:key="index">
+        <text class="cal-date">{{item.day}}</text>
+        <view class="cal-dot" wx:if="{{item.checked}}"></view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 学习时长趋势 -->
+  <view class="section">
+    <text class="section-title">学习时长趋势（近7天）</text>
+    <view class="chart-wrap">
+      <view class="chart-bars">
+        <view class="bar-group" wx:for="{{chartData}}" wx:key="index">
+          <view class="bar" style="height: {{item.value * 1.8}}rpx"></view>
+          <text class="bar-label">{{item.day}}</text>
+          <text class="bar-value">{{item.value}}min</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 最近专注记录 -->
+  <view class="section">
+    <text class="section-title">最近专注记录</text>
+    <view class="record-list">
+      <view class="record-item" wx:for="{{recentRecords}}" wx:key="index">
+        <view class="record-left">
+          <text class="record-mode">{{item.mode}}</text>
+          <text class="record-task">{{item.task || '未命名任务'}}</text>
+        </view>
+        <view class="record-right">
+          <text class="record-time">{{item.time}}</text>
+          <text class="record-duration">{{item.minutes}}min</text>
+        </view>
+      </view>
+      <view class="empty-tip" wx:if="{{recentRecords.length === 0}}">
+        <text class="empty-text">暂无专注记录</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部占位 -->
+  <view class="bottom-placeholder"></view>
+
+  <!-- TabBar -->
+  <tab-bar active="statistics"></tab-bar>
+</view>

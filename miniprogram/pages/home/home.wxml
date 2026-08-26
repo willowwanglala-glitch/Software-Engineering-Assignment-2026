@@ -1,0 +1,119 @@
+<view class="home-page">
+  <!-- 顶部标题 -->
+  <view class="header">
+    <text class="header-title">英语考研宝</text>
+  </view>
+
+  <!-- 用户卡片 -->
+  <view class="user-card">
+    <view class="user-info">
+      <image class="avatar-img" wx:if="{{avatarUrl}}" src="{{avatarUrl}}" mode="aspectFill"></image>
+      <view class="avatar" wx:else>{{usernameFirst}}</view>
+      <view class="user-detail">
+        <text class="username">{{username}}</text>
+        <text class="study-days">{{studyDaysText}}</text>
+      </view>
+    </view>
+    <view class="today-points">
+      <text class="points-num">{{todayPoints}}</text>
+      <text class="points-label">今日积分</text>
+    </view>
+  </view>
+
+  <!-- 快捷入口 -->
+  <view class="section">
+    <text class="section-title">快捷入口</text>
+    <view class="grid">
+      <view class="grid-item" bindtap="goSchoolSelect">
+        <view class="grid-icon" style="background: #dbeafe;">院</view>
+        <text class="grid-label">院校方向</text>
+      </view>
+      <view class="grid-item" bindtap="goPlanSetup">
+        <view class="grid-icon" style="background: #fef3c7;">AI</view>
+        <text class="grid-label">AI计划</text>
+      </view>
+      <view class="grid-item" bindtap="goFocusTimer">
+        <view class="grid-icon" style="background: #fce7f3;">番</view>
+        <text class="grid-label">番茄专注</text>
+      </view>
+      <view class="grid-item" bindtap="goStatistics">
+        <view class="grid-icon" style="background: #d1fae5;">数</view>
+        <text class="grid-label">数据统计</text>
+      </view>
+      <view class="grid-item" bindtap="goAiQa">
+        <view class="grid-icon" style="background: #ede9fe;">问</view>
+        <text class="grid-label">AI答疑</text>
+      </view>
+      <view class="grid-item" bindtap="goFaq">
+        <view class="grid-icon" style="background: #e0e7ff;">FAQ</view>
+        <text class="grid-label">备考FAQ</text>
+      </view>
+      <view class="grid-item" bindtap="goEssayReview">
+        <view class="grid-icon" style="background: #ffedd5;">作</view>
+        <text class="grid-label">作文批改</text>
+      </view>
+      <view class="grid-item" bindtap="goEssaySamples">
+        <view class="grid-icon" style="background: #fed7aa;">范</view>
+        <text class="grid-label">作文范文</text>
+      </view>
+      <view class="grid-item" bindtap="goProgress">
+        <view class="grid-icon" style="background: #e0f2fe;">进</view>
+        <text class="grid-label">进度追踪</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 今日概览 -->
+  <view class="section">
+    <text class="section-title">今日概览</text>
+    <view class="overview-row">
+      <view class="overview-card">
+        <text class="overview-value">{{todayFocusText}}</text>
+        <text class="overview-label">专注时长</text>
+      </view>
+      <view class="overview-card">
+        <text class="overview-value">{{taskRateText}}</text>
+        <text class="overview-label">任务完成率</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 薄弱点（来自 AI 答疑） -->
+  <view class="section" wx:if="{{hasWeakBlock}}">
+    <view class="section-head">
+      <text class="section-title">薄弱点强化</text>
+      <text class="section-link" bindtap="goAiQa">继续提问</text>
+    </view>
+    <view class="weak-card">
+      <view class="weak-tags">
+        <text class="weak-tag" wx:for="{{weakTags}}" wx:key="id">{{item.name}} · {{item.count}}</text>
+      </view>
+      <text class="weak-suggest" wx:if="{{weakSuggestName}}">建议：{{weakSuggestName}}</text>
+      <view class="weak-actions">
+        <view class="weak-btn" bindtap="goProgress">去完成任务</view>
+        <view class="weak-btn weak-btn-ghost" bindtap="goFocusTimer">开始专注</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 当前任务 -->
+  <view class="section">
+    <text class="section-title">当前任务</text>
+    <view class="task-card">
+      <view class="task-header">
+        <text class="task-name">{{currentTaskName}}</text>
+        <text class="task-percent">{{currentTaskPercent}}%</text>
+      </view>
+      <view class="progress-bar">
+        <view class="progress-fill" style="width: {{currentTaskPercent}}%;"></view>
+      </view>
+      <text class="task-desc">{{currentTaskDesc}}</text>
+    </view>
+  </view>
+
+  <!-- 底部占位 -->
+  <view class="bottom-placeholder"></view>
+
+  <!-- Tab Bar -->
+  <tab-bar active="home"></tab-bar>
+</view>

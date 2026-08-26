@@ -1,0 +1,119 @@
+<view class="page">
+  <view class="nav-bar">
+    <text class="nav-title">个人中心</text>
+  </view>
+
+  <view class="user-card">
+    <view class="avatar-col">
+      <view class="avatar-wrap" bindtap="openPresetAvatar">
+        <image class="avatar-img" wx:if="{{avatarUrl}}" src="{{avatarUrl}}" mode="aspectFill"></image>
+        <view class="avatar-fallback" wx:else>
+          <text class="avatar-letter">{{usernameFirst}}</text>
+        </view>
+        <view class="avatar-badge">换</view>
+      </view>
+      <text class="avatar-tip" bindtap="openPresetAvatar">选择头像</text>
+    </view>
+    <view class="user-info">
+      <view class="nick-row">
+        <input
+          class="nick-input"
+          type="nickname"
+          placeholder="点击设置昵称"
+          value="{{editNickName}}"
+          bindinput="onNickInput"
+        />
+        <text class="save-btn" bindtap="saveNickName">保存</text>
+      </view>
+      <text class="user-school">考研方向：{{directionName}}</text>
+      <text class="user-school">目标院校：{{schoolName}}</text>
+      <text class="user-edit" bindtap="goSchoolSelect">修改方向/院校 ></text>
+    </view>
+  </view>
+
+  <view class="stats-row">
+    <view class="stat-item">
+      <text class="stat-num">{{statDays}}</text>
+      <text class="stat-label">有记录天数</text>
+    </view>
+    <view class="stat-divider"></view>
+    <view class="stat-item">
+      <text class="stat-num">{{statFocusCount}}</text>
+      <text class="stat-label">本周专注次</text>
+    </view>
+    <view class="stat-divider"></view>
+    <view class="stat-item">
+      <text class="stat-num">{{statMinutesWeek}}h</text>
+      <text class="stat-label">本周时长</text>
+    </view>
+  </view>
+
+  <view class="admin-card" wx:if="{{showAdmin}}" bindtap="goAdmin">
+    <text class="admin-title">管理后台</text>
+    <text class="admin-desc">查看学生信息与学习数据</text>
+    <text class="admin-arrow">></text>
+  </view>
+
+  <view class="menu-list">
+    <view class="menu-item" bindtap="onMenuTap" data-menu="favorite">
+      <text class="menu-icon-text">★</text>
+      <text class="menu-name">我的收藏</text>
+      <text class="menu-arrow">></text>
+    </view>
+    <view class="menu-item" bindtap="onMenuTap" data-menu="notification">
+      <text class="menu-icon-text">✉</text>
+      <text class="menu-name">消息通知</text>
+      <text class="menu-arrow">></text>
+    </view>
+    <view class="menu-item" bindtap="onMenuTap" data-menu="settings">
+      <text class="menu-icon-text">⚙</text>
+      <text class="menu-name">系统设置</text>
+      <text class="menu-arrow">></text>
+    </view>
+    <view class="menu-item" bindtap="onMenuTap" data-menu="help">
+      <text class="menu-icon-text">?</text>
+      <text class="menu-name">帮助与反馈</text>
+      <text class="menu-arrow">></text>
+    </view>
+  </view>
+
+  <view class="logout-wrap">
+    <view class="logout-btn" bindtap="logout">退出登录</view>
+  </view>
+
+  <view class="bottom-placeholder"></view>
+  <tab-bar active="profile"></tab-bar>
+  <privacy-popup />
+
+  <!-- 预设头像选择 -->
+  <view class="ai-mask" wx:if="{{presetVisible}}" catchtouchmove="noop">
+    <view class="ai-sheet">
+      <view class="ai-sheet-hd">
+        <text class="ai-sheet-title">选择头像</text>
+        <text class="ai-sheet-close" bindtap="closePresetAvatar">×</text>
+      </view>
+      <text class="ai-sheet-desc">从下方 6 款考研主题头像中选一张即可。</text>
+      <view class="preset-grid">
+        <view
+          class="preset-item {{selectedPresetId === item.id ? 'active' : ''}}"
+          wx:for="{{presetAvatars}}"
+          wx:key="id"
+          data-id="{{item.id}}"
+          bindtap="selectPreset"
+        >
+          <image class="preset-img" src="{{item.src}}" mode="aspectFill"></image>
+          <text class="preset-name">{{item.name}}</text>
+        </view>
+      </view>
+      <view class="ai-actions">
+        <button class="ai-btn secondary" bindtap="closePresetAvatar">取消</button>
+        <button
+          class="ai-btn primary"
+          disabled="{{!selectedPresetId || aiApplying}}"
+          loading="{{aiApplying}}"
+          bindtap="applyPresetAvatar"
+        >使用此头像</button>
+      </view>
+    </view>
+  </view>
+</view>

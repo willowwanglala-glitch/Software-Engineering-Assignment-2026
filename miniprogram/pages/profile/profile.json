@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "tab-bar": "/components/tab-bar/tab-bar",
+    "privacy-popup": "/components/privacy-popup/privacy-popup"
+  },
+  "navigationStyle": "custom"
+}

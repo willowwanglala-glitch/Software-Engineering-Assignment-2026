@@ -1,0 +1,15 @@
+{
+  "name": "english-kaoyanbao-data",
+  "private": true,
+  "description": "英语考研宝 — 种子数据构建与校验脚本",
+  "scripts": {
+    "extract": "node scripts/extract-sources.mjs",
+    "validate": "node scripts/validate.mjs",
+    "build": "node scripts/build.mjs",
+    "export:cloud": "node scripts/export-cloud.mjs",
+    "stats": "node scripts/stats.mjs",
+    "collect:essays": "node scripts/collect-essays.mjs",
+    "collect:essays:draft": "node scripts/collect-essays.mjs --draft",
+    "prepare": "node scripts/build.mjs"
+  }
+}

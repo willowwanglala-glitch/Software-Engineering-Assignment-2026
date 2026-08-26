@@ -1,0 +1,76 @@
+.privacy-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+.privacy-dialog {
+  width: 100%;
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 40rpx 36rpx;
+}
+
+.privacy-title {
+  display: block;
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 20rpx;
+}
+
+.privacy-content {
+  display: block;
+  font-size: 28rpx;
+  color: #475569;
+  line-height: 1.7;
+}
+
+.privacy-links {
+  margin: 20rpx 0 28rpx;
+}
+
+.link {
+  font-size: 26rpx;
+  color: #2563eb;
+}
+
+.privacy-actions {
+  display: flex;
+  gap: 20rpx;
+}
+
+.btn-disagree,
+.btn-agree {
+  flex: 1;
+  font-size: 28rpx;
+  border-radius: 12rpx;
+  margin: 0;
+  padding: 0;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.btn-disagree {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.btn-disagree::after,
+.btn-agree::after {
+  border: none;
+}
+
+.btn-agree {
+  background: #2563eb;
+  color: #fff;
+}

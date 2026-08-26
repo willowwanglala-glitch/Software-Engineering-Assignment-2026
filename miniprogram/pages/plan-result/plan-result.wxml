@@ -1,0 +1,69 @@
+<view class="page">
+  <!-- 导航栏 -->
+  <view class="nav-bar">
+    <view class="nav-back" bindtap="goBack">
+      <text class="back-icon">←</text>
+    </view>
+    <text class="nav-title">你的专属备考计划</text>
+    <view class="nav-placeholder"></view>
+  </view>
+
+  <!-- Tab切换 -->
+  <view class="tab-container">
+    <view class="tab-item {{activeTab === 0 ? 'active' : ''}}" bindtap="switchTab" data-index="0">基础阶段</view>
+    <view class="tab-item {{activeTab === 1 ? 'active' : ''}}" bindtap="switchTab" data-index="1">强化阶段</view>
+    <view class="tab-item {{activeTab === 2 ? 'active' : ''}}" bindtap="switchTab" data-index="2">冲刺阶段</view>
+  </view>
+
+  <!-- 阶段内容 -->
+  <view class="stage-content">
+    <!-- 阶段信息卡片 -->
+    <view class="stage-card">
+      <view class="stage-header">
+        <text class="stage-name">{{currentStage.name}}</text>
+        <text class="stage-days">{{currentStage.dayRange}}</text>
+      </view>
+      <view class="progress-section">
+        <view class="progress-info">
+          <text class="progress-label">完成进度</text>
+          <text class="progress-percent">{{currentStage.progress}}%</text>
+        </view>
+        <view class="progress-bar-bg">
+          <view class="progress-bar-fill" style="width: {{currentStage.progress}}%"></view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 每日任务 -->
+    <view class="section">
+      <text class="section-title">每日任务</text>
+      <view class="task-list">
+        <view class="task-item" wx:for="{{currentStage.tasks}}" wx:key="index">
+          <view class="task-dot"></view>
+          <text class="task-text">{{item}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 每周目标 -->
+    <view class="section">
+      <text class="section-title">每周目标</text>
+      <view class="weekly-goal">
+        <text class="goal-text">{{currentStage.weeklyGoal}}</text>
+      </view>
+    </view>
+
+    <!-- 推荐资料 -->
+    <view class="section">
+      <text class="section-title">推荐资料</text>
+      <view class="material-tags">
+        <text class="material-tag" wx:for="{{currentStage.materials}}" wx:key="index">{{item}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部按钮 -->
+  <view class="bottom-btn-wrap">
+    <view class="start-btn" bindtap="startPlan">开始执行计划</view>
+  </view>
+</view>

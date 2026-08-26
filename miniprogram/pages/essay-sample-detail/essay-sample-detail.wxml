@@ -1,0 +1,62 @@
+<view class="page" wx:if="{{sample}}">
+  <view class="nav-bar">
+    <view class="nav-back" bindtap="goBack"><text class="back-icon">←</text></view>
+    <text class="nav-title">范文详情</text>
+    <view class="nav-placeholder"></view>
+  </view>
+
+  <view class="header-card">
+    <text class="title">{{sample.title}}</text>
+    <text class="meta">{{sample.year}} · {{sample.examLabel}} · {{sample.typeLabel}} · 约{{sample.wordCount}}词</text>
+    <view class="tags" wx:if="{{sample.tags && sample.tags.length}}">
+      <text class="tag" wx:for="{{sample.tags}}" wx:key="*this">{{item}}</text>
+    </view>
+  </view>
+
+  <view class="section" wx:if="{{sample.prompt}}">
+    <text class="section-label">题目要求</text>
+    <text class="prompt-text">{{sample.prompt}}</text>
+  </view>
+
+  <view class="section">
+    <view class="section-head">
+      <text class="section-label">参考范文</text>
+      <text class="copy-btn" bindtap="copyContent">复制</text>
+    </view>
+    <text class="content-text" selectable>{{sample.content}}</text>
+    <text class="source-text">{{sample.source}}</text>
+  </view>
+
+  <view class="btn-wrap">
+    <view class="primary-btn" bindtap="goReview">用此题练习批改</view>
+  </view>
+
+  <!-- 剪贴板 API 受限时的手动复制兜底：弹层内全选后复制 -->
+  <view class="copy-mask" wx:if="{{showCopyPanel}}" catchtouchmove="noop">
+    <view class="copy-sheet">
+      <view class="copy-sheet-hd">
+        <text class="copy-sheet-title">复制范文</text>
+        <text class="copy-sheet-close" bindtap="closeCopyPanel">×</text>
+      </view>
+      <text class="copy-sheet-tip">系统剪切板受限时，请在下方文本框长按「全选」再「复制」；也可点「全选并重试」。</text>
+      <textarea
+        class="copy-textarea"
+        value="{{copyPanelText}}"
+        maxlength="-1"
+        focus="{{copyPanelFocus}}"
+        selection-start="{{copySelStart}}"
+        selection-end="{{copySelEnd}}"
+        show-confirm-bar="{{false}}"
+        hold-keyboard="{{false}}"
+        adjust-position="{{false}}"
+        bindfocus="onCopyPanelFocus"
+      />
+      <view class="copy-actions">
+        <button class="copy-action-btn secondary" bindtap="closeCopyPanel">关闭</button>
+        <button class="copy-action-btn primary" bindtap="selectAllInPanel">全选并重试</button>
+      </view>
+    </view>
+  </view>
+
+  <privacy-popup />
+</view>
